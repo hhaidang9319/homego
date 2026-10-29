@@ -17,6 +17,19 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
+    "category": "thiet-bi-thong-minh",
+    "categoryLabel": "Thiết bị thông minh",
+    "name": "Máy Rửa Thực Phẩm Sóng Siêu Âm Masuto Smart",
+    "image": "https://images.unsplash.com/photo-1585659722983-3867c5e20ef9?auto=format&fit=crop&q=80&w=400",
+    "imageAlt": "Máy rửa thực phẩm",
+    "price": "790.000đ",
+    "oldPrice": "1.200.000đ",
+    "badge": "Bán chạy",
+    "flashSale": "-35% OFF",
+    "shopeeUrl": "https://shopee.vn",
+    "tiktokUrl": "https://tiktok.com"
+  },
+  {
     "category": "nha-bep",
     "categoryLabel": "Đồ dùng nhà bếp",
     "name": "Nồi Chiên Không Dầu Điện Tử 6L Đa Năng",
