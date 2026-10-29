@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài viết - HomeGo</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>body{font-family:'Inter',sans-serif}h1,h2,h3,h4,.font-heading{font-family:'Montserrat',sans-serif}</style>
+</head>
+<body class="bg-[#F7F7F2] text-[#222222]">
+    <header class="bg-white border-b border-[#E5E7EB]">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="/" class="font-heading font-extrabold text-xl text-[#0F5132]"><i class="fa-solid fa-house-chimney mr-1"></i>Home<span class="text-[#FF8A2B]">Go</span></a>
+            <nav class="text-xs md:text-sm font-semibold flex gap-4">
+                <a href="/" class="hover:text-[#FF8A2B]">Trang chủ</a>
+                <a href="post.html" class="hover:text-[#FF8A2B]">Tất cả bài viết</a>
+            </nav>
+        </div>
+    </header>
+    <main id="main" class="max-w-4xl mx-auto px-4 py-6 md:py-10"></main>
+    <footer class="text-center text-xs text-gray-500 py-8">© HomeGo. Có chứa link tiếp thị liên kết (Affiliate).</footer>
+
+    <script src="data/contacts.js"></script>
+    <script src="data/blog.js"></script>
+    <script>
+        (function () {
+            const esc = v => String(v == null ? '' : v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            const posts = window.HOMEGO_BLOG || [];
+            const slug = new URLSearchParams(location.search).get('p');
+            const main = document.getElementById('main');
+            const img = u => !u ? '' : /^(https?:|data:|\/)/.test(u) ? u : '/' + u;
+            const fmt = d => d ? d.split('-').reverse().join('/') : '';
+            const card = b => `
+                <a href="post.html?p=${encodeURIComponent(b.slug)}" class="bg-white rounded-2xl border border-[#E5E7EB] shadow-sm overflow-hidden hover:shadow-md transition flex flex-col">
+                    <img src="${esc(img(b.image))}" alt="${esc(b.title)}" class="w-full h-44 object-cover bg-gray-100">
+                    <div class="p-4 flex flex-col flex-1">
+                        <span class="text-[10px] font-bold text-[#0F5132] uppercase tracking-wider">${esc(b.tag || 'Đánh giá chi tiết')}</span>
+                        <h3 class="font-heading font-bold text-sm md:text-base mt-1 mb-2 line-clamp-2">${esc(b.title)}</h3>
+                        <p class="text-xs text-gray-600 line-clamp-3 mb-3">${esc(b.intro)}</p>
+                        <span class="mt-auto text-xs font-bold text-[#FF8A2B]">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>`;
+            const li = it => typeof it === 'string' ? `<li>• ${esc(it)}</li>` : `<li${it.bold ? ' class="font-semibold"' : ''}>• ${esc(it.text)}</li>`;
+            const body = t => String(t || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean).map(x =>
+                x.startsWith('## ') ? `<h2 class="font-heading font-bold text-lg md:text-xl mt-6 mb-2">${esc(x.slice(3))}</h2>`
+                : `<p class="text-sm md:text-base text-gray-700 leading-relaxed mb-4">${esc(x).replace(/\n/g, '<br>')}</p>`).join('');
+
+            const b = posts.find(p => p.slug === slug);
+            if (b) {
+                document.title = b.title + ' - HomeGo';
+                const others = posts.filter(p => p !== b).slice(0, 3);
+                main.innerHTML = `
+                <article class="bg-white rounded-2xl md:rounded-3xl p-5 sm:p-8 border border-[#E5E7EB] shadow-sm">
+                    <span class="bg-[#0F5132]/10 text-[#0F5132] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">${esc(b.tag || 'Đánh giá chi tiết')}</span>
+                    <h1 class="text-2xl sm:text-3xl font-heading font-extrabold mt-3 mb-2">${esc(b.title)}</h1>
+                    <p class="text-xs text-gray-500 mb-4">${fmt(b.date)}</p>
+                    ${b.image ? `<img src="${esc(img(b.image))}" alt="${esc(b.title)}" class="w-full rounded-2xl mb-5 object-cover max-h-[420px]">` : ''}
+                    <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-4 font-medium">${esc(b.intro)}</p>
+                    ${body(b.content)}
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+                        <div class="bg-[#F7F7F2] p-4 rounded-xl border border-gray-200"><h4 class="font-bold text-xs text-[#0F5132] uppercase mb-2"><i class="fa-solid fa-check text-green-600 mr-1"></i> Ưu điểm</h4><ul class="text-xs md:text-sm text-gray-600 space-y-1">${(b.pros || []).map(li).join('')}</ul></div>
+                        <div class="bg-[#F7F7F2] p-4 rounded-xl border border-gray-200"><h4 class="font-bold text-xs text-red-600 uppercase mb-2"><i class="fa-solid fa-xmark text-red-500 mr-1"></i> Nhược điểm</h4><ul class="text-xs md:text-sm text-gray-600 space-y-1">${(b.cons || []).map(li).join('')}</ul></div>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        ${b.shopeeUrl ? `<a href="${esc(b.shopeeUrl)}" target="_blank" rel="nofollow sponsored noopener" class="bg-[#FF8A2B] hover:bg-[#e07520] text-white px-5 py-3 rounded-xl font-heading font-bold text-xs shadow"><i class="fa-solid fa-bag-shopping mr-1"></i>${esc(b.shopeeText || 'Mua trên Shopee')}</a>` : ''}
+                        ${b.tiktokUrl ? `<a href="${esc(b.tiktokUrl)}" target="_blank" rel="nofollow sponsored noopener" class="bg-[#222222] hover:bg-black text-white px-5 py-3 rounded-xl font-heading font-bold text-xs shadow"><i class="fa-brands fa-tiktok mr-1"></i>${esc(b.tiktokText || 'Săn deal trên TikTok Shop')}</a>` : ''}
+                    </div>
+                </article>
+                ${others.length ? `<h2 class="font-heading font-extrabold text-lg mt-8 mb-3">Bài viết khác</h2><div class="grid grid-cols-1 sm:grid-cols-3 gap-4">${others.map(card).join('')}</div>` : ''}`;
+            } else {
+                main.innerHTML = `${slug ? '<p class="text-sm text-red-600 mb-4">Không tìm thấy bài viết này.</p>' : ''}
+                <h1 class="font-heading font-extrabold text-2xl mb-4">Review &amp; Mẹo Hay Gia Dụng</h1>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">${posts.map(card).join('')}</div>`;
+            }
+        })();
+    </script>
+</body>
+</html>

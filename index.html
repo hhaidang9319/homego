@@ -228,7 +228,7 @@
             <p class="text-[11px] md:text-xs text-gray-500">Đánh giá thực tế, chi tiết từng sản phẩm giúp bạn mua sắm thông thái</p>
         </div>
 
-        <div id="blogPosts" class="space-y-6">
+        <div id="blogPosts">
             <!-- Render từ blog.js -->
         </div>
     </section>
@@ -426,44 +426,22 @@
         </a>
     `);
 
-            // ---------- BLOG REVIEW ----------
-            const li = (it) => typeof it === 'string'
-                ? `<li>• ${esc(it)}</li>`
-                : `<li${it.bold ? ' class="font-semibold"' : ''}>• ${esc(it.text)}</li>`;
-            set('blogPosts', (window.HOMEGO_BLOG || []).map(b => `
-            <div class="bg-white rounded-2xl md:rounded-3xl p-5 sm:p-8 border border-[#E5E7EB] shadow-sm">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-center">
-                    <div class="lg:col-span-1 rounded-2xl overflow-hidden shadow">
-                        <img src="${esc(b.image)}" alt="${esc(b.imageAlt || b.title)}" class="w-full h-full object-cover">
+            // ---------- BLOG: danh sách thẻ, bấm vào mở trang bài viết ----------
+            const posts = window.HOMEGO_BLOG || [];
+            const bimg = u => !u ? '' : /^(https?:|data:|\/)/.test(u) ? u : u;
+            set('blogPosts', `
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">${posts.slice(0, 3).map(b => `
+                <a href="post.html?p=${encodeURIComponent(b.slug)}" class="bg-white rounded-2xl border border-[#E5E7EB] shadow-sm overflow-hidden hover:shadow-md transition flex flex-col">
+                    <img src="${esc(bimg(b.image))}" alt="${esc(b.title)}" class="w-full h-44 object-cover bg-gray-100">
+                    <div class="p-4 flex flex-col flex-1">
+                        <span class="text-[10px] font-bold text-[#0F5132] uppercase tracking-wider">${esc(b.tag || 'Đánh giá chi tiết')}</span>
+                        <h3 class="font-heading font-bold text-sm md:text-base text-[#222222] mt-1 mb-2 line-clamp-2">${esc(b.title)}</h3>
+                        <p class="text-xs text-gray-600 line-clamp-3 mb-3">${esc(b.intro)}</p>
+                        <span class="mt-auto text-xs font-bold text-[#FF8A2B]">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
-                    <div class="lg:col-span-2">
-                        <span class="bg-[#0F5132]/10 text-[#0F5132] text-[11px] md:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">${esc(b.tag || 'Đánh giá chi tiết')}</span>
-                        <h3 class="text-lg sm:text-2xl font-heading font-extrabold text-[#222222] mt-2 mb-3">${esc(b.title)}</h3>
-                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed mb-4">${esc(b.intro)}</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                            <div class="bg-[#F7F7F2] p-4 rounded-xl border border-gray-200">
-                                <h4 class="font-heading font-bold text-xs text-[#0F5132] uppercase mb-2"><i class="fa-solid fa-check text-green-600 mr-1"></i> Ưu điểm vượt trội</h4>
-                                <ul class="text-xs text-gray-600 space-y-1">${(b.pros || []).map(li).join('')}</ul>
-                            </div>
-                            <div class="bg-[#F7F7F2] p-4 rounded-xl border border-gray-200">
-                                <h4 class="font-heading font-bold text-xs text-red-600 uppercase mb-2"><i class="fa-solid fa-xmark text-red-500 mr-1"></i> Nhược điểm</h4>
-                                <ul class="text-xs text-gray-600 space-y-1">${(b.cons || []).map(li).join('')}</ul>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap items-center gap-3 md:gap-4">
-                            <a href="${esc(b.shopeeUrl)}" target="_blank" class="bg-[#FF8A2B] hover:bg-[#e07520] text-white px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-heading font-bold text-xs shadow transition flex items-center space-x-2">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                                <span>${esc(b.shopeeText || 'Mua trên Shopee')}</span>
-                            </a>
-                            <a href="${esc(b.tiktokUrl)}" target="_blank" class="bg-[#222222] hover:bg-black text-white px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-heading font-bold text-xs shadow transition flex items-center space-x-2">
-                                <i class="fa-brands fa-tiktok"></i>
-                                <span>${esc(b.tiktokText || 'Săn deal trên TikTok Shop')}</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            `).join(''));
+                </a>`).join('')}</div>
+            ${posts.length > 3 ? '<div class="text-center mt-5"><a href="post.html" class="inline-block bg-[#0F5132] text-white px-6 py-2.5 rounded-xl font-heading font-bold text-xs">Xem tất cả bài viết</a></div>' : ''}
+            `);
         })();
     </script>
 
