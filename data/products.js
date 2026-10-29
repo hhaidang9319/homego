@@ -19,32 +19,6 @@ window.HOMEGO_PRODUCTS = [
   {
     "category": "nha-bep",
     "categoryLabel": "Đồ dùng nhà bếp",
-    "name": "Nồi Chiên Không Dầu Sunhouse 6.5 Lít SHD4030",
-    "image": "images/noi-chien-sunhouse-6-5l.jpg",
-    "imageAlt": "Nồi chiên không dầu Sunhouse 6.5 lít SHD4030",
-    "price": "1.171.500đ",
-    "oldPrice": "",
-    "badge": "",
-    "flashSale": "",
-    "shopeeUrl": "https://s.shopee.vn/5LD2FbVfCh",
-    "tiktokUrl": "https://vt.tiktok.com/ZS9ySugjHYHrf-SixnA/"
-  },
-  {
-    "category": "thiet-bi-thong-minh",
-    "categoryLabel": "Thiết bị thông minh",
-    "name": "Máy Rửa Thực Phẩm Sóng Siêu Âm Masuto Smart",
-    "image": "https://images.unsplash.com/photo-1585659722983-3867c5e20ef9?auto=format&fit=crop&q=80&w=400",
-    "imageAlt": "Máy rửa thực phẩm",
-    "price": "790.000đ",
-    "oldPrice": "1.200.000đ",
-    "badge": "Bán chạy",
-    "flashSale": "-35% OFF",
-    "shopeeUrl": "https://shopee.vn",
-    "tiktokUrl": "https://tiktok.com"
-  },
-  {
-    "category": "nha-bep",
-    "categoryLabel": "Đồ dùng nhà bếp",
     "name": "Nồi Chiên Không Dầu Điện Tử 6L Đa Năng",
     "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=400",
     "imageAlt": "Nồi chiên không dầu",
