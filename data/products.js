@@ -69,19 +69,6 @@ window.HOMEGO_PRODUCTS = [
     "tiktokUrl": "https://tiktok.com"
   },
   {
-    "category": "noi-that",
-    "categoryLabel": "Bàn ghế & Nội thất",
-    "name": "Bàn Trà Sofa Thông Minh Gấp Gọn Tiện Lợi",
-    "image": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80&w=400",
-    "imageAlt": "Bàn trà",
-    "price": "450.000đ",
-    "oldPrice": "650.000đ",
-    "badge": "",
-    "flashSale": "",
-    "shopeeUrl": "https://shopee.vn",
-    "tiktokUrl": "https://tiktok.com"
-  },
-  {
     "category": "phong-ngu",
     "categoryLabel": "Phòng ngủ",
     "name": "Đèn Ngủ Cảm Ứng Thông Minh Đổi Màu Kiêm Sạc Không Dây",
