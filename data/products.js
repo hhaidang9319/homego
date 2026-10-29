@@ -17,19 +17,6 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
-    "category": "dien-gia-dung",
-    "categoryLabel": "Thiết bị điện",
-    "name": "Quạt Kẹp Đa Năng Xoay 360 Độ Pin Trâu 5000mAh",
-    "image": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&q=80&w=400",
-    "imageAlt": "Quạt",
-    "price": "210.000đ",
-    "oldPrice": "350.000đ",
-    "badge": "",
-    "flashSale": "",
-    "shopeeUrl": "https://shopee.vn",
-    "tiktokUrl": "https://tiktok.com"
-  },
-  {
     "category": "den-chieu-sang",
     "categoryLabel": "Đèn chiếu sáng",
     "name": "Đèn LED Thanh Dán Tủ Cảm Ứng Chuyển Động Pin Sạc",
