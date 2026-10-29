@@ -17,146 +17,133 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
-    category: "nha-bep",
-    categoryLabel: "Đồ dùng nhà bếp",
-    name: "Thớt Cắt Hai Mặt Titan Nguyên Chất Redchef Kháng Khuẩn, Chống Mốc",
-    image: "images/thot-redchef.jpg",
-    imageAlt: "Thớt Redchef hai mặt Titan",
-    price: "339.050đ",
-    oldPrice: "",
-    badge: "",
-    flashSale: "",
-    shopeeUrl: "https://s.shopee.vn/7Ky6cxEBan",
-    tiktokUrl: "https://vt.tiktok.com/ZS9ySmoGT3fj1-MrA01/"
+    "category": "nha-bep",
+    "categoryLabel": "Đồ dùng nhà bếp",
+    "name": "Thớt Cắt Hai Mặt Titan Nguyên Chất Redchef Kháng Khuẩn, Chống Mốc",
+    "image": "images/thot-redchef.jpg",
+    "imageAlt": "Thớt Redchef hai mặt Titan",
+    "price": "339.050đ",
+    "oldPrice": "",
+    "badge": "",
+    "flashSale": "",
+    "shopeeUrl": "https://s.shopee.vn/7Ky6cxEBan",
+    "tiktokUrl": "https://vt.tiktok.com/ZS9ySmoGT3fj1-MrA01/"
   },
   {
-    category: "don-dep",
-    categoryLabel: "Dọn dẹp nhà cửa",
-    name: "Combo 12 Bịch Khăn Giấy Rút Treo Tường Topgia 1280 Tờ 4 Lớp Mềm Mịn",
-    image: "images/khan-giay-topgia.jpg",
-    imageAlt: "Combo 12 bịch khăn giấy Topgia",
-    price: "324.001đ",
-    oldPrice: "",
-    badge: "",
-    flashSale: "",
-    shopeeUrl: "https://s.shopee.vn/8fTUDYlp13",
-    tiktokUrl: "https://vt.tiktok.com/ZS9ySur7bLpV9-Ip01N/"
+    "category": "don-dep",
+    "categoryLabel": "Dọn dẹp nhà cửa",
+    "name": "Combo 12 Bịch Khăn Giấy Rút Treo Tường Topgia 1280 Tờ 4 Lớp Mềm Mịn",
+    "image": "images/khan-giay-topgia.jpg",
+    "imageAlt": "Combo 12 bịch khăn giấy Topgia",
+    "price": "324.001đ",
+    "oldPrice": "",
+    "badge": "",
+    "flashSale": "",
+    "shopeeUrl": "https://s.shopee.vn/8fTUDYlp13",
+    "tiktokUrl": "https://vt.tiktok.com/ZS9ySur7bLpV9-Ip01N/"
   },
   {
-    category: "nha-bep",
-    categoryLabel: "Đồ dùng nhà bếp",
-    name: "Nồi Chiên Không Dầu Sunhouse 6.5 Lít SHD4030",
-    image: "images/noi-chien-sunhouse-6-5l.jpg",
-    imageAlt: "Nồi chiên không dầu Sunhouse 6.5 lít SHD4030",
-    price: "1.171.500đ",
-    oldPrice: "",
-    badge: "",
-    flashSale: "",
-    shopeeUrl: "https://s.shopee.vn/5LD2FbVfCh",
-    tiktokUrl: "https://vt.tiktok.com/ZS9ySugjHYHrf-SixnA/"
+    "category": "nha-bep",
+    "categoryLabel": "Đồ dùng nhà bếp",
+    "name": "Nồi Chiên Không Dầu Sunhouse 6.5 Lít SHD4030",
+    "image": "images/noi-chien-sunhouse-6-5l.jpg",
+    "imageAlt": "Nồi chiên không dầu Sunhouse 6.5 lít SHD4030",
+    "price": "1.171.500đ",
+    "oldPrice": "",
+    "badge": "",
+    "flashSale": "",
+    "shopeeUrl": "https://s.shopee.vn/5LD2FbVfCh",
+    "tiktokUrl": "https://vt.tiktok.com/ZS9ySugjHYHrf-SixnA/"
   },
   {
-    category: "thiet-bi-thong-minh",
-    categoryLabel: "Thiết bị thông minh",
-    name: "Máy Rửa Thực Phẩm Sóng Siêu Âm Masuto Smart",
-    image: "https://images.unsplash.com/photo-1585659722983-3867c5e20ef9?auto=format&fit=crop&q=80&w=400",
-    imageAlt: "Máy rửa thực phẩm",
-    price: "790.000đ",
-    oldPrice: "1.200.000đ",
-    badge: "Bán chạy",        // nhãn góc phải (vd: "Bán chạy"), để "" nếu không dùng
-    flashSale: "-35% OFF",      // nhãn giảm giá trong Flash Sale, để "" nếu không đưa vào Flash Sale
-    shopeeUrl: "https://shopee.vn",
-    tiktokUrl: "https://tiktok.com"
+    "category": "nha-bep",
+    "categoryLabel": "Đồ dùng nhà bếp",
+    "name": "Nồi Chiên Không Dầu Điện Tử 6L Đa Năng",
+    "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=400",
+    "imageAlt": "Nồi chiên không dầu",
+    "price": "1.150.000đ",
+    "oldPrice": "1.950.000đ",
+    "badge": "",
+    "flashSale": "-40% OFF",
+    "shopeeUrl": "https://shopee.vn",
+    "tiktokUrl": "https://tiktok.com"
   },
   {
-    category: "nha-bep",
-    categoryLabel: "Đồ dùng nhà bếp",
-    name: "Nồi Chiên Không Dầu Điện Tử 6L Đa Năng",
-    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=400",
-    imageAlt: "Nồi chiên không dầu",
-    price: "1.150.000đ",
-    oldPrice: "1.950.000đ",
-    badge: "",        // nhãn góc phải (vd: "Bán chạy"), để "" nếu không dùng
-    flashSale: "-40% OFF",      // nhãn giảm giá trong Flash Sale, để "" nếu không đưa vào Flash Sale
-    shopeeUrl: "https://shopee.vn",
-    tiktokUrl: "https://tiktok.com"
+    "category": "don-dep",
+    "categoryLabel": "Dọn dẹp nhà cửa",
+    "name": "Máy Hút Bụi Cầm Tay Không Dây Lực Hút Cực Mạnh",
+    "image": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=400",
+    "imageAlt": "Máy hút bụi",
+    "price": "590.000đ",
+    "oldPrice": "850.000đ",
+    "badge": "",
+    "flashSale": "-30% OFF",
+    "shopeeUrl": "https://shopee.vn",
+    "tiktokUrl": "https://tiktok.com"
   },
   {
-    category: "don-dep",
-    categoryLabel: "Dọn dẹp nhà cửa",
-    name: "Máy Hút Bụi Cầm Tay Không Dây Lực Hút Cực Mạnh",
-    image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=400",
-    imageAlt: "Máy hút bụi",
-    price: "590.000đ",
-    oldPrice: "850.000đ",
-    badge: "",        // nhãn góc phải (vd: "Bán chạy"), để "" nếu không dùng
-    flashSale: "-30% OFF",      // nhãn giảm giá trong Flash Sale, để "" nếu không đưa vào Flash Sale
-    shopeeUrl: "https://shopee.vn",
-    tiktokUrl: "https://tiktok.com"
+    "category": "phong-tam",
+    "categoryLabel": "Phòng tắm",
+    "name": "Kệ Đựng Đồ Nhà Tắm Thông Minh Không Cần Khoan Tường",
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400",
+    "imageAlt": "Kệ phòng tắm",
+    "price": "189.000đ",
+    "oldPrice": "250.000đ",
+    "badge": "",
+    "flashSale": "-25% OFF",
+    "shopeeUrl": "https://shopee.vn",
+    "tiktokUrl": "https://tiktok.com"
   },
   {
-    category: "phong-tam",
-    categoryLabel: "Phòng tắm",
-    name: "Kệ Đựng Đồ Nhà Tắm Thông Minh Không Cần Khoan Tường",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400",
-    imageAlt: "Kệ phòng tắm",
-    price: "189.000đ",
-    oldPrice: "250.000đ",
-    badge: "",        // nhãn góc phải (vd: "Bán chạy"), để "" nếu không dùng
-    flashSale: "-25% OFF",      // nhãn giảm giá trong Flash Sale, để "" nếu không đưa vào Flash Sale
-    shopeeUrl: "https://shopee.vn",
-    tiktokUrl: "https://tiktok.com"
+    "category": "noi-that",
+    "categoryLabel": "Bàn ghế & Nội thất",
+    "name": "Bàn Trà Sofa Thông Minh Gấp Gọn Tiện Lợi",
+    "image": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80&w=400",
+    "imageAlt": "Bàn trà",
+    "price": "450.000đ",
+    "oldPrice": "650.000đ",
+    "badge": "",
+    "flashSale": "",
+    "shopeeUrl": "https://shopee.vn",
+    "tiktokUrl": "https://tiktok.com"
   },
   {
-    category: "noi-that",
-    categoryLabel: "Bàn ghế & Nội thất",
-    name: "Bàn Trà Sofa Thông Minh Gấp Gọn Tiện Lợi",
-    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80&w=400",
-    imageAlt: "Bàn trà",
-    price: "450.000đ",
-    oldPrice: "650.000đ",
-    badge: "",        // nhãn góc phải (vd: "Bán chạy"), để "" nếu không dùng
-    flashSale: "",      // nhãn giảm giá trong Flash Sale, để "" nếu không đưa vào Flash Sale
-    shopeeUrl: "https://shopee.vn",
-    tiktokUrl: "https://tiktok.com"
+    "category": "phong-ngu",
+    "categoryLabel": "Phòng ngủ",
+    "name": "Đèn Ngủ Cảm Ứng Thông Minh Đổi Màu Kiêm Sạc Không Dây",
+    "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=400",
+    "imageAlt": "Đèn ngủ",
+    "price": "299.000đ",
+    "oldPrice": "420.000đ",
+    "badge": "",
+    "flashSale": "",
+    "shopeeUrl": "https://shopee.vn",
+    "tiktokUrl": "https://tiktok.com"
   },
   {
-    category: "phong-ngu",
-    categoryLabel: "Phòng ngủ",
-    name: "Đèn Ngủ Cảm Ứng Thông Minh Đổi Màu Kiêm Sạc Không Dây",
-    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=400",
-    imageAlt: "Đèn ngủ",
-    price: "299.000đ",
-    oldPrice: "420.000đ",
-    badge: "",        // nhãn góc phải (vd: "Bán chạy"), để "" nếu không dùng
-    flashSale: "",      // nhãn giảm giá trong Flash Sale, để "" nếu không đưa vào Flash Sale
-    shopeeUrl: "https://shopee.vn",
-    tiktokUrl: "https://tiktok.com"
+    "category": "dien-gia-dung",
+    "categoryLabel": "Thiết bị điện",
+    "name": "Quạt Kẹp Đa Năng Xoay 360 Độ Pin Trâu 5000mAh",
+    "image": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&q=80&w=400",
+    "imageAlt": "Quạt",
+    "price": "210.000đ",
+    "oldPrice": "350.000đ",
+    "badge": "",
+    "flashSale": "",
+    "shopeeUrl": "https://shopee.vn",
+    "tiktokUrl": "https://tiktok.com"
   },
   {
-    category: "dien-gia-dung",
-    categoryLabel: "Thiết bị điện",
-    name: "Quạt Kẹp Đa Năng Xoay 360 Độ Pin Trâu 5000mAh",
-    image: "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&q=80&w=400",
-    imageAlt: "Quạt",
-    price: "210.000đ",
-    oldPrice: "350.000đ",
-    badge: "",        // nhãn góc phải (vd: "Bán chạy"), để "" nếu không dùng
-    flashSale: "",      // nhãn giảm giá trong Flash Sale, để "" nếu không đưa vào Flash Sale
-    shopeeUrl: "https://shopee.vn",
-    tiktokUrl: "https://tiktok.com"
-  },
-  {
-    category: "den-chieu-sang",
-    categoryLabel: "Đèn chiếu sáng",
-    name: "Đèn LED Thanh Dán Tủ Cảm Ứng Chuyển Động Pin Sạc",
-    image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=400",
-    imageAlt: "Đèn LED",
-    price: "135.000đ",
-    oldPrice: "199.000đ",
-    badge: "",        // nhãn góc phải (vd: "Bán chạy"), để "" nếu không dùng
-    flashSale: "",      // nhãn giảm giá trong Flash Sale, để "" nếu không đưa vào Flash Sale
-    shopeeUrl: "https://shopee.vn",
-    tiktokUrl: "https://tiktok.com"
+    "category": "den-chieu-sang",
+    "categoryLabel": "Đèn chiếu sáng",
+    "name": "Đèn LED Thanh Dán Tủ Cảm Ứng Chuyển Động Pin Sạc",
+    "image": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=400",
+    "imageAlt": "Đèn LED",
+    "price": "135.000đ",
+    "oldPrice": "199.000đ",
+    "badge": "",
+    "flashSale": "",
+    "shopeeUrl": "https://shopee.vn",
+    "tiktokUrl": "https://tiktok.com"
   }
 ];
