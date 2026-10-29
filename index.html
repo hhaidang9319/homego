@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeGo - Gia dụng thông minh</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Montserrat', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* TỐI ƯU RIÊNG CHO DI ĐỘNG (MOBILE) MÀ KHÔNG ẢNH HƯỞNG BẢN WEB */
+        @media (max-width: 768px) {
+            .mobile-header-padding { padding-left: 0.75rem; padding-right: 0.75rem; }
+            .mobile-banner-text { font-size: 1.5rem !important; line-height: 1.2 !important; }
+            .mobile-product-card { width: 160px !important; }
+            .mobile-cat-btn { width: 85px !important; height: 85px !important; }
+        }
+    </style>
+</head>
+<body class="bg-[#F7F7F2] text-[#222222] pb-16 md:pb-0">
+
+    <!-- TOP BAR THÔNG BÁO -->
+    <div class="bg-[#0F5132] text-white text-[11px] md:text-xs py-2 px-4 text-center font-medium">
+        <span>🔥 Săn deal gia dụng thông minh độc quyền Shopee & TikTok Shop mỗi ngày!</span>
+    </div>
+
+    <!-- HEADER & STICKY NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-[#E5E7EB]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mobile-header-padding">
+            <div class="flex items-center justify-between h-16 md:h-20 gap-2">
+                
+                <!-- LOGO THIẾT KẾ CHUẨN XÁC, KHÔNG LỖI -->
+                <a href="#" class="flex items-center space-x-2.5 md:space-x-3 group flex-shrink-0">
+                    <div class="w-10 h-10 md:w-11 md:h-11 bg-[#0F5132] rounded-xl flex items-center justify-center shadow-md relative overflow-hidden">
+                        <i class="fa-solid fa-house-chimney text-white text-lg md:text-xl"></i>
+                        <span class="absolute bottom-1 right-1 w-3 h-3 bg-[#FF8A2B] rounded-full border-2 border-[#0F5132]"></span>
+                    </div>
+                    <div>
+                        <span class="text-lg md:text-2xl font-extrabold tracking-tight font-heading text-[#0F5132]">Home<span class="text-[#FF8A2B]">Go</span></span>
+                        <span class="block text-[8px] md:text-[10px] uppercase tracking-wider text-gray-500 font-semibold whitespace-nowrap">Gia dụng thông minh</span>
+                    </div>
+                </a>
+
+                <!-- DESKTOP MENU -->
+                <nav class="hidden md:flex items-center space-x-5 lg:space-x-8 font-medium text-xs lg:text-sm whitespace-nowrap">
+                    <a href="#home" class="text-[#0F5132] font-bold hover:text-[#FF8A2B] transition">Trang chủ</a>
+                    <a href="#products" class="text-gray-700 hover:text-[#0F5132] transition">Sản phẩm</a>
+                    <a href="#categories" class="text-gray-700 hover:text-[#0F5132] transition">Nhà cửa & Đời sống</a>
+                    <a href="#flashsale" class="text-gray-700 hover:text-[#0F5132] transition">Deal & Ưu đãi</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-[#0F5132] transition">Review & Mẹo hay</a>
+                </nav>
+
+                <!-- SEARCH & ACTIONS -->
+                <div class="flex items-center space-x-2 md:space-x-4 flex-shrink-0">
+                    <div class="hidden lg:flex items-center bg-[#F7F7F2] border border-[#E5E7EB] rounded-full px-4 py-2 w-56 xl:w-64 focus-within:border-[#0F5132] transition">
+                        <i class="fa-solid fa-magnifying-glass text-gray-400 mr-2"></i>
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm đồ gia dụng..." class="bg-transparent text-sm outline-none w-full text-[#222222]">
+                    </div>
+                    <a href="#flashsale" class="bg-[#FF8A2B] hover:bg-[#e07520] text-white px-3 md:px-4 py-2 md:py-2.5 rounded-xl font-heading font-bold text-[11px] md:text-xs uppercase tracking-wide shadow-md transition flex items-center space-x-1.5 whitespace-nowrap">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span class="hidden sm:inline">Săn Sale Ngay</span>
+                        <span class="sm:hidden">Sale</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
+        <div class="bg-[#0F5132] rounded-2xl md:rounded-3xl p-5 md:p-10 text-white relative overflow-hidden shadow-lg flex flex-col justify-center min-h-[200px] md:min-h-[220px]">
+            <div class="relative z-10 max-w-xl">
+                <span class="bg-[#FF8A2B] text-white text-[10px] md:text-[11px] font-bold px-2.5 md:px-3 py-0.5 md:py-1 rounded-full uppercase tracking-wider inline-block mb-2 md:mb-3">Bộ sưu tập HomeGo 2026</span>
+                <h1 class="text-xl mobile-banner-text md:text-4xl font-extrabold font-heading tracking-tight mb-2 leading-tight">
+                    <span class="block">Sống tiện nghi</span>
+                    <span class="block">Nhà thêm xinh!</span>
+                </h1>
+                <p class="text-gray-200 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">Giải pháp gia dụng thông minh tối ưu không gian sống. Chọn lọc đồ gia dụng chất lượng cao với ưu đãi độc quyền trên Shopee & TikTok Shop.</p>
+                <div class="flex flex-wrap gap-2.5 md:gap-3">
+                    <a href="#categories" class="bg-[#FF8A2B] hover:bg-[#e07520] text-white text-[11px] md:text-xs font-bold px-4 md:px-5 py-2.5 md:py-3 rounded-xl shadow transition flex items-center space-x-2 font-heading">
+                        <span>Khám phá danh mục</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#flashsale" class="border border-white/30 hover:bg-white/10 text-white text-[11px] md:text-xs font-bold px-4 md:px-5 py-2.5 md:py-3 rounded-xl transition flex items-center space-x-2">
+                        <i class="fa-solid fa-bolt text-[#FF8A2B]"></i>
+                        <span>Săn Deal Hot</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Background Decorative Icon -->
+            <div class="absolute right-[-20px] bottom-[-20px] opacity-10 pointer-events-none">
+                <i class="fa-solid fa-house-chimney text-white text-[250px]"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10 DANH MỤC SẢN PHẨM -->
+    <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+        <div class="flex items-center justify-between mb-4 md:mb-6">
+            <h2 class="text-lg md:text-xl font-extrabold font-heading text-[#0F5132] flex items-center space-x-2">
+                <i class="fa-solid fa-list-check text-[#FF8A2B]"></i>
+                <span>Danh Mục Sản Phẩm</span>
+            </h2>
+            <span class="text-xs text-gray-500 font-medium">Bấm vào để xem sản phẩm &rarr;</span>
+        </div>
+        
+        <div class="flex space-x-3 md:space-x-4 overflow-x-auto hide-scrollbar pb-2">
+            <button onclick="filterCategoryAndScroll('all')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-[#0F5132] text-white px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-bold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-border-all text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight">Tất cả sản phẩm</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('thiet-bi-thong-minh')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-microchip text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Thiết bị gia dụng thông minh</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('nha-bep')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-utensils text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Đồ dùng nhà bếp</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('noi-that')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-couch text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Bàn ghế & Nội thất</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('phong-tam')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-shower text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Đồ dùng phòng tắm & Vệ sinh cá nhân</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('phong-ngu')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-bed text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Phòng ngủ & Chăn ga gối nệm</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('dien-gia-dung')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-plug text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Thiết bị điện gia dụng</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('don-dep')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-broom text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Dọn dẹp & Chăm sóc nhà cửa</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('trang-tri')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-wand-magic-sparkles text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Trang trí & Phụ kiện</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('den-chieu-sang')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-lightbulb text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Đèn chiếu sáng & Thiết bị điện</span>
+            </button>
+            <button onclick="filterCategoryAndScroll('san-vuon')" class="cat-btn mobile-cat-btn flex-shrink-0 bg-white hover:bg-gray-50 border border-[#E5E7EB] text-[#222222] px-4 md:px-5 py-3 rounded-2xl text-[11px] md:text-xs font-semibold shadow-sm transition flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-2">
+                <i class="fa-solid fa-seedling text-[#FF8A2B] text-sm md:text-base"></i>
+                <span class="text-center md:text-left leading-tight line-clamp-2 md:line-clamp-none">Sân vườn & Ban công</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- FLASH SALE CAROUSEL -->
+    <section id="flashsale" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
+        <div class="bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-sm border border-[#E5E7EB]">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 md:pb-6 border-b border-gray-100 mb-4 md:mb-6 gap-3">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-[#FF8A2B] text-white w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow">
+                        <i class="fa-solid fa-bolt text-base md:text-lg"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-base md:text-xl font-extrabold font-heading text-[#0F5132]">FLASH SALE GIỜ VÀNG</h2>
+                        <p class="text-[11px] md:text-xs text-gray-500">Giảm sốc có hạn - Chốt đơn ngay kẻo lỡ!</p>
+                    </div>
+                </div>
+                <!-- Đồng hồ đếm ngược -->
+                <div class="flex items-center space-x-2 bg-[#F7F7F2] px-3 md:px-4 py-1.5 md:py-2 rounded-xl border border-gray-200">
+                    <span class="text-[11px] md:text-xs font-bold text-gray-600">Khung giờ tiếp theo:</span>
+                    <div class="flex space-x-1 text-[11px] md:text-xs font-extrabold text-[#0F5132] items-center">
+                        <span id="hours" class="bg-[#0F5132] text-white px-1.5 md:px-2 py-0.5 md:py-1 rounded text-center min-w-[24px] md:min-w-[28px]">03</span>:
+                        <span id="minutes" class="bg-[#0F5132] text-white px-1.5 md:px-2 py-0.5 md:py-1 rounded text-center min-w-[24px] md:min-w-[28px]">45</span>:
+                        <span id="seconds" class="bg-[#0F5132] text-white px-1.5 md:px-2 py-0.5 md:py-1 rounded text-center min-w-[24px] md:min-w-[28px]">30</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAROUSEL CONTAINER -->
+            <div class="relative">
+                <div id="flashSlider" class="flex space-x-3 md:space-x-4 overflow-x-auto hide-scrollbar scroll-smooth pb-2 md:pb-4">
+                    <!-- Render từ data/products.js -->
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button onclick="slideSlider('flashSlider', -300)" class="absolute -left-3 md:-left-4 top-1/2 -translate-y-1/2 bg-white text-[#0F5132] border border-gray-200 w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md flex items-center justify-center hover:bg-gray-100 transition z-20">
+                    <i class="fa-solid fa-chevron-left text-xs md:text-sm"></i>
+                </button>
+                <button onclick="slideSlider('flashSlider', 300)" class="absolute -right-3 md:-right-4 top-1/2 -translate-y-1/2 bg-white text-[#0F5132] border border-gray-200 w-8 h-8 md:w-10 md:h-10 rounded-full shadow-md flex items-center justify-center hover:bg-gray-100 transition z-20">
+                    <i class="fa-solid fa-chevron-right text-xs md:text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TẤT CẢ SẢN PHẨM & PHÂN LOẠI -->
+    <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 md:mb-6 gap-2">
+            <div>
+                <h2 class="text-xl md:text-2xl font-extrabold font-heading text-[#0F5132]">Toàn Bộ Sản Phẩm</h2>
+                <p class="text-[11px] md:text-xs text-gray-500">Khám phá kho đồ gia dụng tiện ích chọn lọc cho ngôi nhà của bạn</p>
+            </div>
+            <div class="text-[11px] md:text-xs font-bold text-[#FF8A2B] bg-orange-50 px-3 py-1.5 rounded-xl border border-orange-200">
+                Cập nhật deal liên tục 24/7
+            </div>
+        </div>
+
+        <!-- GRID SẢN PHẨM -->
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+            <!-- Render từ data/products.js -->
+        </div>
+    </section>
+
+    <!-- REVIEW & MẸO HAY -->
+    <section id="reviews" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+        <div class="mb-4 md:mb-6">
+            <h2 class="text-xl md:text-2xl font-extrabold font-heading text-[#0F5132]">Review & Mẹo Hay Gia Dụng</h2>
+            <p class="text-[11px] md:text-xs text-gray-500">Đánh giá thực tế, chi tiết từng sản phẩm giúp bạn mua sắm thông thái</p>
+        </div>
+
+        <div id="blogPosts" class="space-y-6">
+            <!-- Render từ blog.js -->
+        </div>
+    </section>
+
+    <!-- FOOTER CHUẨN THƯƠNG HIỆU HOMEGO -->
+    <footer class="bg-[#0F5132] text-white pt-10 md:pt-12 pb-8 mt-10 md:mt-12 border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                
+                <!-- Cột 1: Giới thiệu với Logo chuẩn -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-[#F7F7F2] rounded-xl flex items-center justify-center shadow">
+                            <i class="fa-solid fa-house-chimney text-[#0F5132] text-lg"></i>
+                        </div>
+                        <span class="text-xl font-extrabold font-heading text-white">Home<span class="text-[#FF8A2B]">Go</span></span>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                        Kênh tổng hợp và review đồ gia dụng thông minh uy tín. Giúp bạn dễ dàng tìm kiếm sản phẩm chất lượng cao với mức giá ưu đãi tốt nhất.
+                    </p>
+                    <div id="footerSocials" class="flex space-x-3">
+                        <!-- Render từ contacts.js -->
+                    </div>
+                </div>
+
+                <!-- Cột 2: Danh mục tiện ích -->
+                <div>
+                    <h4 class="font-heading font-bold text-sm uppercase tracking-wider text-[#FF8A2B] mb-4">Danh Mục Tiện Ích</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#products" class="hover:text-[#FF8A2B] transition">Thiết bị gia dụng thông minh</a></li>
+                        <li><a href="#products" class="hover:text-[#FF8A2B] transition">Đồ dùng nhà bếp</a></li>
+                        <li><a href="#products" class="hover:text-[#FF8A2B] transition">Bàn ghế & Nội thất</a></li>
+                        <li><a href="#products" class="hover:text-[#FF8A2B] transition">Phòng tắm & Vệ sinh cá nhân</a></li>
+                        <li><a href="#products" class="hover:text-[#FF8A2B] transition">Dọn dẹp & Chăm sóc nhà cửa</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột 3: Tuyên bố Affiliate -->
+                <div>
+                    <h4 class="font-heading font-bold text-sm uppercase tracking-wider text-[#FF8A2B] mb-4">Về HomeGo & Affiliate</h4>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                        HomeGo tham gia chương trình Tiếp thị liên kết (Affiliate Marketing) để cung cấp đường dẫn đến các sàn thương mại điện tử uy tín như Shopee, TikTok Shop.
+                    </p>
+                    <p class="text-xs text-gray-400">
+                        Giá và ưu đãi có thể thay đổi tùy thuộc vào chính sách của nhà bán hàng tại thời điểm mua sắm.
+                    </p>
+                </div>
+
+                <!-- Cột 4: Thông tin liên hệ -->
+                <div>
+                    <h4 class="font-heading font-bold text-sm uppercase tracking-wider text-[#FF8A2B] mb-4">Liên Hệ Hợp Tác</h4>
+                    <ul id="footerContacts" class="space-y-2.5 text-xs text-gray-300">
+                        <!-- Render từ contacts.js -->
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-emerald-900 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400">
+                <p>&copy; 2026 HomeGo - Gia dụng thông minh. All rights reserved.</p>
+                <div class="flex space-x-4 mt-2 sm:mt-0">
+                    <a href="#" class="hover:text-white transition">Chính sách bảo mật</a>
+                    <a href="#" class="hover:text-white transition">Điều khoản sử dụng</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#E5E7EB] z-50 px-4 py-2 flex justify-around items-center shadow-lg">
+        <a href="#home" class="flex flex-col items-center text-[#0F5132]">
+            <i class="fa-solid fa-house text-base"></i>
+            <span class="text-[10px] font-semibold mt-0.5">Trang chủ</span>
+        </a>
+        <a href="#products" class="flex flex-col items-center text-gray-500 hover:text-[#0F5132]">
+            <i class="fa-solid fa-boxes-stacked text-base"></i>
+            <span class="text-[10px] font-semibold mt-0.5">Sản phẩm</span>
+        </a>
+        <a href="#flashsale" class="flex flex-col items-center text-gray-500 hover:text-[#0F5132]">
+            <i class="fa-solid fa-bolt text-base text-[#FF8A2B]"></i>
+            <span class="text-[10px] font-semibold mt-0.5">Deal Hot</span>
+        </a>
+        <a href="#reviews" class="flex flex-col items-center text-gray-500 hover:text-[#0F5132]">
+            <i class="fa-solid fa-book-open text-base"></i>
+            <span class="text-[10px] font-semibold mt-0.5">Review</span>
+        </a>
+    </div>
+
+    <!-- FLOATING CHAT WIDGETS -->
+    <div id="floatingChat" class="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 flex flex-col space-y-3">
+        <!-- Render từ contacts.js -->
+    </div>
+
+    <!-- DỮ LIỆU: sửa nội dung tại thư mục data/, KHÔNG cần sửa index.html -->
+    <script src="data/products.js"></script>
+    <script src="data/contacts.js"></script>
+    <script src="data/blog.js"></script>
+
+    <!-- HIỂN THỊ DỮ LIỆU (giữ nguyên giao diện gốc) -->
+    <script>
+        (function () {
+            const esc = (v) => String(v == null ? '' : v)
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+
+            // Báo lỗi rõ ràng nếu thiếu file dữ liệu (chưa để chung thư mục với index.html)
+            const missing = [['HOMEGO_PRODUCTS', 'data/products.js'], ['HOMEGO_CONTACTS', 'data/contacts.js'], ['HOMEGO_BLOG', 'data/blog.js']]
+                .filter(([key]) => !window[key]).map(([, file]) => file);
+            if (missing.length) {
+                const bar = document.createElement('div');
+                bar.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#b91c1c;color:#fff;padding:10px 16px;font:14px/1.4 sans-serif;text-align:center';
+                bar.textContent = 'Không tải được: ' + missing.join(', ') + ' — hãy kiểm tra file có nằm trong thư mục data/ và đúng tên (viết thường).';
+                document.body.appendChild(bar);
+            }
+
+            const shopeeBtn = (url, text, cls) => `
+                    <a href="${esc(url)}" target="_blank" class="${cls}">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>${esc(text)}</span>
+                    </a>`;
+            const tiktokBtn = (url, text, cls) => `
+                    <a href="${esc(url)}" target="_blank" class="${cls}">
+                        <i class="fa-brands fa-tiktok"></i>
+                        <span>${esc(text)}</span>
+                    </a>`;
+            const SHOPEE_CLS = 'bg-[#FF8A2B] hover:bg-[#e07520] text-white py-1.5 md:py-2 rounded-xl text-center text-[11px] md:text-xs font-bold transition flex items-center justify-center space-x-1 shadow-sm';
+            const TIKTOK_CLS = 'bg-[#222222] hover:bg-black text-white py-1.5 md:py-2 rounded-xl text-center text-[11px] md:text-xs font-bold transition flex items-center justify-center space-x-1 shadow-sm';
+
+            // ---------- SẢN PHẨM ----------
+            const products = window.HOMEGO_PRODUCTS || [];
+
+            set('flashSlider', products.filter(p => p.flashSale).map(p => `
+                    <div class="product-card mobile-product-card flex-shrink-0 w-64 bg-[#F7F7F2] rounded-2xl p-3 md:p-4 border border-[#E5E7EB] relative flex flex-col justify-between" data-category="${esc(p.category)}">
+                        <span class="absolute top-2.5 md:top-3 left-2.5 md:left-3 bg-[#FF8A2B] text-white text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded-full z-10">${esc(p.flashSale)}</span>
+                        <div class="relative h-36 md:h-44 rounded-xl overflow-hidden mb-2.5 md:mb-3 bg-white">
+                            <img src="${esc(p.image)}" alt="${esc(p.imageAlt || p.name)}" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="text-[9px] md:text-[10px] font-semibold text-[#0F5132] uppercase tracking-wider">${esc(p.categoryLabel)}</span>
+                            <h3 class="font-heading font-bold text-xs md:text-sm text-[#222222] line-clamp-2 mt-1 mb-1.5 md:mb-2">${esc(p.name)}</h3>
+                            <div class="flex items-baseline space-x-2 mb-2.5 md:mb-3">
+                                <span class="text-[#FF8A2B] font-extrabold text-sm md:text-base">${esc(p.price)}</span>
+                                ${p.oldPrice ? `<span class="text-[11px] md:text-xs text-gray-400 line-through">${esc(p.oldPrice)}</span>` : ''}
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-1.5 md:gap-2 mt-auto">${shopeeBtn(p.shopeeUrl, 'Shopee', SHOPEE_CLS)}${tiktokBtn(p.tiktokUrl, 'TikTok', TIKTOK_CLS)}
+                        </div>
+                    </div>
+            `).join(''));
+
+            set('productGrid', products.map(p => `
+            <div class="product-card bg-white rounded-xl md:rounded-2xl p-3 md:p-4 border border-[#E5E7EB] shadow-sm flex flex-col justify-between hover:shadow-md transition" data-category="${esc(p.category)}">
+                <div>
+                    <div class="relative h-36 md:h-48 rounded-lg md:rounded-xl overflow-hidden mb-2.5 md:mb-3 bg-gray-50">
+                        <img src="${esc(p.image)}" alt="${esc(p.imageAlt || p.name)}" class="w-full h-full object-cover">
+                        ${p.badge ? `<span class="absolute top-2 right-2 bg-[#0F5132] text-white text-[9px] md:text-[10px] font-bold px-1.5 md:px-2 py-0.5 rounded-md">${esc(p.badge)}</span>` : ''}
+                    </div>
+                    <span class="text-[9px] md:text-[10px] font-semibold text-[#0F5132] uppercase tracking-wider">${esc(p.categoryLabel)}</span>
+                    <h3 class="font-heading font-bold text-xs md:text-sm text-[#222222] line-clamp-2 mt-1 mb-1.5 md:mb-2">${esc(p.name)}</h3>
+                    <div class="flex items-baseline space-x-1.5 md:space-x-2 mb-2.5 md:mb-3">
+                        <span class="text-[#FF8A2B] font-extrabold text-sm md:text-base">${esc(p.price)}</span>
+                        ${p.oldPrice ? `<span class="text-[10px] md:text-xs text-gray-400 line-through">${esc(p.oldPrice)}</span>` : ''}
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-1.5 md:gap-2 mt-auto">${shopeeBtn(p.shopeeUrl, 'Shopee', SHOPEE_CLS)}${tiktokBtn(p.tiktokUrl, 'TikTok', TIKTOK_CLS)}
+                </div>
+            </div>
+            `).join(''));
+
+            // ---------- LIÊN HỆ ----------
+            const c = window.HOMEGO_CONTACTS || {};
+            set('footerContacts', `
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-location-dot text-[#FF8A2B] mt-0.5"></i>
+                            <span>${esc(c.address)}</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-phone text-[#FF8A2B]"></i>
+                            <span>${esc(c.phoneLabel)}: ${esc(c.phone)}</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-envelope text-[#FF8A2B]"></i>
+                            <span>${esc(c.emailLabel)}: ${esc(c.email)}</span>
+                        </li>
+            `);
+            set('footerSocials', (c.socials || []).map(s => `
+                        <a href="${esc(s.url)}" class="w-9 h-9 bg-white/10 hover:bg-[#FF8A2B] rounded-xl flex items-center justify-center transition text-white"><i class="${esc(s.icon)}"></i></a>`).join('') + '\n                    ');
+            set('floatingChat', `
+        <a href="${esc(c.zaloUrl)}" target="_blank" class="w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center transition transform hover:scale-105" title="Chat Zalo">
+            <span class="font-heading font-bold text-xs">Zalo</span>
+        </a>
+        <a href="${esc(c.messengerUrl)}" target="_blank" class="w-12 h-12 bg-[#FF8A2B] hover:bg-[#e07520] text-white rounded-full shadow-lg flex items-center justify-center transition transform hover:scale-105" title="Chat Messenger">
+            <i class="fa-brands fa-facebook-messenger text-xl"></i>
+        </a>
+    `);
+
+            // ---------- BLOG REVIEW ----------
+            const li = (it) => typeof it === 'string'
+                ? `<li>• ${esc(it)}</li>`
+                : `<li${it.bold ? ' class="font-semibold"' : ''}>• ${esc(it.text)}</li>`;
+            set('blogPosts', (window.HOMEGO_BLOG || []).map(b => `
+            <div class="bg-white rounded-2xl md:rounded-3xl p-5 sm:p-8 border border-[#E5E7EB] shadow-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-center">
+                    <div class="lg:col-span-1 rounded-2xl overflow-hidden shadow">
+                        <img src="${esc(b.image)}" alt="${esc(b.imageAlt || b.title)}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="lg:col-span-2">
+                        <span class="bg-[#0F5132]/10 text-[#0F5132] text-[11px] md:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">${esc(b.tag || 'Đánh giá chi tiết')}</span>
+                        <h3 class="text-lg sm:text-2xl font-heading font-extrabold text-[#222222] mt-2 mb-3">${esc(b.title)}</h3>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed mb-4">${esc(b.intro)}</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-[#F7F7F2] p-4 rounded-xl border border-gray-200">
+                                <h4 class="font-heading font-bold text-xs text-[#0F5132] uppercase mb-2"><i class="fa-solid fa-check text-green-600 mr-1"></i> Ưu điểm vượt trội</h4>
+                                <ul class="text-xs text-gray-600 space-y-1">${(b.pros || []).map(li).join('')}</ul>
+                            </div>
+                            <div class="bg-[#F7F7F2] p-4 rounded-xl border border-gray-200">
+                                <h4 class="font-heading font-bold text-xs text-red-600 uppercase mb-2"><i class="fa-solid fa-xmark text-red-500 mr-1"></i> Nhược điểm</h4>
+                                <ul class="text-xs text-gray-600 space-y-1">${(b.cons || []).map(li).join('')}</ul>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3 md:gap-4">
+                            <a href="${esc(b.shopeeUrl)}" target="_blank" class="bg-[#FF8A2B] hover:bg-[#e07520] text-white px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-heading font-bold text-xs shadow transition flex items-center space-x-2">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>${esc(b.shopeeText || 'Mua trên Shopee')}</span>
+                            </a>
+                            <a href="${esc(b.tiktokUrl)}" target="_blank" class="bg-[#222222] hover:bg-black text-white px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-heading font-bold text-xs shadow transition flex items-center space-x-2">
+                                <i class="fa-brands fa-tiktok"></i>
+                                <span>${esc(b.tiktokText || 'Săn deal trên TikTok Shop')}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `).join(''));
+        })();
+    </script>
+
+    <!-- JAVASCRIPT XỬ LÝ ĐỒNG HỒ ĐẾM NGƯỢC & ĐIỀU HƯỚNG DANH MỤC -->
+    <script>
+        function getNextFlashSaleTime() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            const nextHour = Math.floor(currentHour / 3) * 3 + 3;
+            
+            const target = new Date();
+            if (nextHour >= 24) {
+                target.setDate(target.getDate() + 1);
+                target.setHours(0, 0, 0, 0);
+            } else {
+                target.setHours(nextHour, 0, 0, 0);
+            }
+            return Math.floor((target - now) / 1000);
+        }
+
+        let totalSeconds = getNextFlashSaleTime();
+
+        function updateCountdown() {
+            const hoursElem = document.getElementById('hours');
+            const minutesElem = document.getElementById('minutes');
+            const secondsElem = document.getElementById('seconds');
+
+            if (totalSeconds > 0) {
+                totalSeconds--;
+            } else {
+                totalSeconds = getNextFlashSaleTime();
+            }
+
+            let h = Math.floor(totalSeconds / 3600);
+            let m = Math.floor((totalSeconds % 3600) / 60);
+            let s = totalSeconds % 60;
+
+            if(hoursElem) hoursElem.innerText = h < 10 ? '0' + h : h;
+            if(minutesElem) minutesElem.innerText = m < 10 ? '0' + m : m;
+            if(secondsElem) secondsElem.innerText = s < 10 ? '0' + s : s;
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        function slideSlider(id, distance) {
+            const container = document.getElementById(id);
+            container.scrollBy({ left: distance, behavior: 'smooth' });
+        }
+
+        function filterCategoryAndScroll(category) {
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-[#0F5132]', 'text-white');
+                btn.classList.add('bg-white', 'text-[#222222]');
+            });
+            event.currentTarget.classList.remove('bg-white', 'text-[#222222]');
+            event.currentTarget.classList.add('bg-[#0F5132]', 'text-white');
+
+            const cards = document.querySelectorAll('#productGrid .product-card');
+            cards.forEach(card => {
+                if(category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.py = '';
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const productSection = document.getElementById('products');
+            if(productSection) {
+                productSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        const searchInput = document.getElementById('searchInput');
+        if(searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const keyword = e.target.value.toLowerCase().trim();
+                const cards = document.querySelectorAll('#productGrid .product-card');
+                cards.forEach(card => {
+                    const title = card.querySelector('h3').innerText.toLowerCase();
+                    if(title.includes(keyword)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

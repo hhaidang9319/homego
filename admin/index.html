@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>HomeGo Admin</title>
+<style>
+:root{--g:#0F5132;--o:#FF8A2B}*{box-sizing:border-box}
+body{font:14px system-ui,sans-serif;margin:0;background:#F7F7F2;color:#222}.w{max-width:900px;margin:auto;padding:14px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin-bottom:12px}
+input,select,textarea{width:100%;padding:8px;border:1px solid #d1d5db;border-radius:8px;font:inherit;margin:3px 0 8px}textarea{min-height:72px}
+label{font-size:12px;color:#6b7280;font-weight:600}
+button{background:var(--g);color:#fff;border:0;border-radius:8px;padding:8px 14px;font:inherit;cursor:pointer}
+button.x{background:#b91c1c}button.s{background:#6b7280}button.t{background:#e5e7eb;color:#222}button.on{background:var(--g);color:#fff}
+.g{display:grid;gap:0 12px;grid-template-columns:1fr 1fr}.f{grid-column:1/-1}@media(max-width:640px){.g{grid-template-columns:1fr}}
+.r{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.r b{flex:1;min-width:140px}
+.th{width:44px;height:44px;object-fit:cover;border-radius:6px;background:#eee}
+#msg{position:fixed;bottom:12px;left:12px;right:12px;padding:10px;border-radius:8px;color:#fff;display:none;z-index:9}
+</style></head><body><div class="w"><h2 style="color:var(--g)">HomeGo – Quản trị</h2><div id="app"></div></div><div id="msg"></div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const CATS={"thiet-bi-thong-minh":"Thiết bị thông minh","nha-bep":"Đồ dùng nhà bếp","noi-that":"Bàn ghế & Nội thất","phong-tam":"Phòng tắm","phong-ngu":"Phòng ngủ","dien-gia-dung":"Thiết bị điện","don-dep":"Dọn dẹp nhà cửa","trang-tri":"Trang trí","den-chieu-sang":"Đèn chiếu sáng","san-vuon":"Sân vườn"};
+const PH='data:image/svg+xml,'+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='#F3F4F6'/></svg>");
+const K={products:{p:'data/products.js',k:'HOMEGO_PRODUCTS',n:'name'},blog:{p:'data/blog.js',k:'HOMEGO_BLOG',n:'title'}};
+const FD={products:[['name','Tên sản phẩm'],['category','Danh mục','sel'],['price','Giá bán (vd 199.000đ)'],['oldPrice','Giá gốc gạch ngang (có thể trống)'],['badge','Nhãn góc ảnh (vd Bán chạy)'],['flashSale','Flash Sale (vd -30% OFF, trống = không)'],['shopeeUrl','Link affiliate Shopee','f'],['tiktokUrl','Link affiliate TikTok','f'],['image','Ảnh: dán link hoặc chọn file bên dưới','f']],
+blog:[['title','Tiêu đề','f'],['tag','Nhãn (vd Đánh giá chi tiết)'],['image','Ảnh bìa: link hoặc chọn file'],['intro','Mở bài','ta'],['pros','Ưu điểm (mỗi dòng 1 ý, đầu dòng ** = in đậm)','ta'],['cons','Nhược điểm (mỗi dòng 1 ý)','ta'],['shopeeUrl','Link affiliate Shopee'],['tiktokUrl','Link affiliate TikTok']]};
+let S={tab:'products',i:-1,products:{data:[]},blog:{data:[]}};
+const cfg=()=>{try{return JSON.parse(localStorage.hg||'{}')}catch(e){return{}}};
+const b64d=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g,'')),c=>c.charCodeAt(0)));
+const b64e=s=>{let t='';new TextEncoder().encode(s).forEach(x=>t+=String.fromCharCode(x));return btoa(t)};
+function say(m,bad){const e=$('#msg');e.textContent=m;e.style.background=bad?'#b91c1c':'#0F5132';e.style.display='block';clearTimeout(say.t);say.t=setTimeout(()=>e.style.display='none',5000)}
+async function gh(path,o={}){const c=cfg(),r=await fetch(`https://api.github.com/repos/${c.repo}/${path}`,{...o,headers:{Authorization:'Bearer '+c.token,Accept:'application/vnd.github+json'}});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(r.status+' '+(j.message||''));return j}
+async function load(t){const{p,k}=K[t],f=await gh(`contents/${p}?ref=${cfg().branch}`),code=b64d(f.content),w={};new Function('window',code)(w);S[t]={data:w[k]||[],sha:f.sha,head:code.slice(0,code.indexOf('window.'+k))}}
+async function commit(t){const{p,k}=K[t],o=S[t],r=await gh('contents/'+p,{method:'PUT',body:JSON.stringify({message:'Admin: cập nhật '+p,content:b64e(o.head+'window.'+k+' = '+JSON.stringify(o.data,null,2)+';\n'),sha:o.sha,branch:cfg().branch})});o.sha=r.content.sha;say('Đã đăng lên GitHub. Website tự cập nhật sau khoảng 1 phút.')}
+async function up(file){const im=await createImageBitmap(file),k=Math.min(1,800/im.width),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);const n='images/'+Date.now()+'.jpg';await gh('contents/'+n,{method:'PUT',body:JSON.stringify({message:'Admin: thêm ảnh '+n,content:c.toDataURL('image/jpeg',.85).split(',')[1],branch:cfg().branch})});return n}
+const lines=s=>s.split('\n').map(x=>x.trim()).filter(Boolean).map(x=>x.startsWith('**')?{text:x.slice(2).trim(),bold:true}:x);
+const unl=a=>(a||[]).map(x=>typeof x=='string'?x:(x.bold?'**':'')+x.text).join('\n');
+const src=u=>!u?PH:/^(https?:|data:)/.test(u)?u:'../'+u;
+function login(){const c=cfg();$('#app').innerHTML=`<div class="card"><b>Kết nối GitHub</b><br><br><label>Repo (tên-tài-khoản/tên-repo)</label><input id="c_repo" value="${esc(c.repo)}" placeholder="vd: nguyenvan/homego"><label>Nhánh</label><input id="c_branch" value="${esc(c.branch||'main')}"><label>Token (Personal Access Token)</label><input id="c_token" type="password" value="${esc(c.token)}"><button onclick="connect()">Kết nối</button><p style="color:#6b7280">Token chỉ lưu trong trình duyệt của bạn, không gửi đi đâu ngoài GitHub.</p></div>`}
+function connect(){localStorage.hg=JSON.stringify({repo:$('#c_repo').value.trim(),branch:$('#c_branch').value.trim()||'main',token:$('#c_token').value.trim()});start()}
+function logout(){localStorage.removeItem('hg');login()}
+function start(){if(!cfg().token)return login();Promise.all([load('products'),load('blog')]).then(render).catch(e=>{say('Không kết nối được: '+e.message,1);login()})}
+function tab(t){S.tab=t;S.i=-1;render()}
+function edit(i){S.i=i;render();scrollTo(0,0)}
+function render(){const t=S.tab,L=S[t].data,it=S.i>=0?L[S.i]:{},n=K[t].n;
+const fl=FD[t].map(([k,l,ty])=>{let v=(k=='pros'||k=='cons')?unl(it[k]):it[k];const cl=(ty=='f'||ty=='ta')?' class="f"':'';let h=ty=='sel'?`<select id="f_${k}">${Object.entries(CATS).map(([a,b])=>`<option value="${a}"${a==it.category?' selected':''}>${b}</option>`).join('')}</select>`:ty=='ta'?`<textarea id="f_${k}">${esc(v)}</textarea>`:`<input id="f_${k}" value="${esc(v)}">`;if(k=='image')h+=`<input type="file" id="f_image_file" accept="image/*">`;return`<div${cl}><label>${l}</label>${h}</div>`}).join('');
+$('#app').innerHTML=`<div class="r" style="margin-bottom:12px"><button class="${t=='products'?'on':'t'}" onclick="tab('products')">Sản phẩm (${S.products.data.length})</button><button class="${t=='blog'?'on':'t'}" onclick="tab('blog')">Bài viết (${S.blog.data.length})</button><span style="flex:1"></span><button class="s" onclick="logout()">Đăng xuất</button></div>
+<div class="card"><b>${S.i<0?'Thêm mới':'Đang sửa'}</b><div class="g">${fl}</div><div class="r"><button onclick="saveItem()">Lưu &amp; đăng lên web</button>${S.i>=0?'<button class="s" onclick="edit(-1)">Hủy, thêm mới</button>':''}</div></div>
+${L.map((x,i)=>`<div class="card r"><img class="th" src="${esc(src(x.image))}"><b>${esc(x[n])}</b><button class="t" onclick="mv(${i},-1)">↑</button><button class="t" onclick="mv(${i},1)">↓</button><button onclick="edit(${i})">Sửa</button><button class="x" onclick="del(${i})">Xóa</button></div>`).join('')}`}
+async function mutate(f){const t=S.tab,bak=S[t].data;S[t].data=f([...bak]);try{await commit(t)}catch(e){S[t].data=bak;say('Lỗi: '+e.message+' (nếu là 409/422 hãy tải lại trang rồi thử lại)',1)}render()}
+async function saveItem(){const t=S.tab,v={};FD[t].forEach(([k])=>v[k]=$('#f_'+k).value.trim());const file=$('#f_image_file').files[0];
+if(file){try{say('Đang tải ảnh...');v.image=await up(file)}catch(e){return say('Lỗi tải ảnh: '+e.message,1)}}
+if(!v[K[t].n])return say('Hãy nhập '+(t=='blog'?'tiêu đề':'tên sản phẩm'),1);
+const i=S.i,old=i>=0?S[t].data[i]:{};let it={...old,...v};it.image=v.image||PH;
+if(t=='products'){it.categoryLabel=CATS[v.category];it.imageAlt=v.name}else{it.pros=lines(v.pros);it.cons=lines(v.cons);it.imageAlt=v.title;it.shopeeText=old.shopeeText||'Mua chính hãng trên Shopee';it.tiktokText=old.tiktokText||'Săn deal trên TikTok Shop'}
+S.i=-1;await mutate(L=>{i>=0?L[i]=it:L.unshift(it);return L})}
+const del=i=>confirm('Xóa mục này?')&&mutate(L=>(L.splice(i,1),L));
+const mv=(i,d)=>{const j=i+d;if(j<0||j>=S[S.tab].data.length)return;mutate(L=>([L[i],L[j]]=[L[j],L[i]],L))};
+start();
+</script></body></html>
