@@ -56,19 +56,6 @@ window.HOMEGO_PRODUCTS = [
     "tiktokUrl": "https://vt.tiktok.com/ZS9ySugjHYHrf-SixnA/"
   },
   {
-    "category": "phong-tam",
-    "categoryLabel": "Phòng tắm",
-    "name": "Kệ Đựng Đồ Nhà Tắm Thông Minh Không Cần Khoan Tường",
-    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400",
-    "imageAlt": "Kệ phòng tắm",
-    "price": "189.000đ",
-    "oldPrice": "250.000đ",
-    "badge": "",
-    "flashSale": "-25% OFF",
-    "shopeeUrl": "https://shopee.vn",
-    "tiktokUrl": "https://tiktok.com"
-  },
-  {
     "category": "dien-gia-dung",
     "categoryLabel": "Thiết bị điện",
     "name": "Quạt Kẹp Đa Năng Xoay 360 Độ Pin Trâu 5000mAh",
