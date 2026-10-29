@@ -56,19 +56,6 @@ window.HOMEGO_PRODUCTS = [
     "tiktokUrl": "https://vt.tiktok.com/ZS9ySugjHYHrf-SixnA/"
   },
   {
-    "category": "nha-bep",
-    "categoryLabel": "Đồ dùng nhà bếp",
-    "name": "Nồi Chiên Không Dầu Điện Tử 6L Đa Năng",
-    "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=400",
-    "imageAlt": "Nồi chiên không dầu",
-    "price": "1.150.000đ",
-    "oldPrice": "1.950.000đ",
-    "badge": "",
-    "flashSale": "-40% OFF",
-    "shopeeUrl": "https://shopee.vn",
-    "tiktokUrl": "https://tiktok.com"
-  },
-  {
     "category": "don-dep",
     "categoryLabel": "Dọn dẹp nhà cửa",
     "name": "Máy Hút Bụi Cầm Tay Không Dây Lực Hút Cực Mạnh",
