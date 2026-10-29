@@ -17,19 +17,6 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
-    "category": "phong-tam",
-    "categoryLabel": "Phòng tắm",
-    "name": "Kệ Đựng Đồ Nhà Tắm Thông Minh Không Cần Khoan Tường",
-    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400",
-    "imageAlt": "Kệ phòng tắm",
-    "price": "189.000đ",
-    "oldPrice": "250.000đ",
-    "badge": "",
-    "flashSale": "-25% OFF",
-    "shopeeUrl": "https://shopee.vn",
-    "tiktokUrl": "https://tiktok.com"
-  },
-  {
     "category": "noi-that",
     "categoryLabel": "Bàn ghế & Nội thất",
     "name": "Bàn Trà Sofa Thông Minh Gấp Gọn Tiện Lợi",
