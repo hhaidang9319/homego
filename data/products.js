@@ -17,32 +17,6 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
-    "category": "don-dep",
-    "categoryLabel": "Dọn dẹp nhà cửa",
-    "name": "Combo 12 Bịch Khăn Giấy Rút Treo Tường Topgia 1280 Tờ 4 Lớp Mềm Mịn",
-    "image": "images/khan-giay-topgia.jpg",
-    "imageAlt": "Combo 12 bịch khăn giấy Topgia",
-    "price": "324.001đ",
-    "oldPrice": "",
-    "badge": "",
-    "flashSale": "",
-    "shopeeUrl": "https://s.shopee.vn/8fTUDYlp13",
-    "tiktokUrl": "https://vt.tiktok.com/ZS9ySur7bLpV9-Ip01N/"
-  },
-  {
-    "category": "nha-bep",
-    "categoryLabel": "Đồ dùng nhà bếp",
-    "name": "Nồi Chiên Không Dầu Sunhouse 6.5 Lít SHD4030",
-    "image": "images/noi-chien-sunhouse-6-5l.jpg",
-    "imageAlt": "Nồi chiên không dầu Sunhouse 6.5 lít SHD4030",
-    "price": "1.171.500đ",
-    "oldPrice": "",
-    "badge": "",
-    "flashSale": "",
-    "shopeeUrl": "https://s.shopee.vn/5LD2FbVfCh",
-    "tiktokUrl": "https://vt.tiktok.com/ZS9ySugjHYHrf-SixnA/"
-  },
-  {
     "category": "thiet-bi-thong-minh",
     "categoryLabel": "Thiết bị thông minh",
     "name": "Máy Rửa Thực Phẩm Sóng Siêu Âm Masuto Smart",
