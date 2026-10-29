@@ -2,6 +2,19 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
+    "name": "Ghế Gaming Xpanse X9",
+    "category": "noi-that",
+    "price": "1.560.000đ",
+    "oldPrice": "2.764.500đ",
+    "badge": "40%",
+    "flashSale": "FREESHIP",
+    "shopeeUrl": "https://s.shopee.vn/80Dp3cINtB",
+    "tiktokUrl": "https://vt.tiktok.com/ZS9yfewaDPyhg-aEo2X/",
+    "image": "images/1793285836938.jpg",
+    "categoryLabel": "Bàn ghế & Nội thất",
+    "imageAlt": "Ghế Gaming Xpanse X9"
+  },
+  {
     "name": "Nồi Chiên Không Dầu SUNHOUSE 6.5 Lít",
     "category": "nha-bep",
     "price": "890.990đ",
