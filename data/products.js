@@ -17,6 +17,19 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
+    "category": "nha-bep",
+    "categoryLabel": "Đồ dùng nhà bếp",
+    "name": "Nồi Chiên Không Dầu Sunhouse 6.5 Lít SHD4030",
+    "image": "images/noi-chien-sunhouse-6-5l.jpg",
+    "imageAlt": "Nồi chiên không dầu Sunhouse 6.5 lít SHD4030",
+    "price": "1.171.500đ",
+    "oldPrice": "",
+    "badge": "",
+    "flashSale": "",
+    "shopeeUrl": "https://s.shopee.vn/5LD2FbVfCh",
+    "tiktokUrl": "https://vt.tiktok.com/ZS9ySugjHYHrf-SixnA/"
+  },
+  {
     "category": "thiet-bi-thong-minh",
     "categoryLabel": "Thiết bị thông minh",
     "name": "Máy Rửa Thực Phẩm Sóng Siêu Âm Masuto Smart",
