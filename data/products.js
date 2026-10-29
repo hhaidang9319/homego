@@ -17,6 +17,19 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
+    "category": "don-dep",
+    "categoryLabel": "Dọn dẹp nhà cửa",
+    "name": "Máy Hút Bụi Cầm Tay Không Dây Lực Hút Cực Mạnh",
+    "image": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=400",
+    "imageAlt": "Máy hút bụi",
+    "price": "590.000đ",
+    "oldPrice": "850.000đ",
+    "badge": "",
+    "flashSale": "-30% OFF",
+    "shopeeUrl": "https://shopee.vn",
+    "tiktokUrl": "https://tiktok.com"
+  },
+  {
     "category": "phong-tam",
     "categoryLabel": "Phòng tắm",
     "name": "Kệ Đựng Đồ Nhà Tắm Thông Minh Không Cần Khoan Tường",
