@@ -2,6 +2,19 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
+    "name": "Kệ Giày Dép Đa Năng",
+    "category": "noi-that",
+    "price": "84.999đ",
+    "oldPrice": "129.000đ",
+    "badge": "FREESHIP",
+    "flashSale": "-34%",
+    "shopeeUrl": "https://s.shopee.vn/1BNUuM0Exm",
+    "tiktokUrl": "https://vt.tiktok.com/ZS9yfJh6W1j7H-5jFH2/",
+    "image": "images/1793285210223.jpg",
+    "categoryLabel": "Bàn ghế & Nội thất",
+    "imageAlt": "Kệ Giày Dép Đa Năng"
+  },
+  {
     "name": "￼Kệ Giá Treo Khăn Inox 304",
     "category": "phong-tam",
     "price": "111.167đ",
