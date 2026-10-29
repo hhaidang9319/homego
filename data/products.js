@@ -17,19 +17,6 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
-    "category": "phong-ngu",
-    "categoryLabel": "Phòng ngủ",
-    "name": "Đèn Ngủ Cảm Ứng Thông Minh Đổi Màu Kiêm Sạc Không Dây",
-    "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=400",
-    "imageAlt": "Đèn ngủ",
-    "price": "299.000đ",
-    "oldPrice": "420.000đ",
-    "badge": "",
-    "flashSale": "",
-    "shopeeUrl": "https://shopee.vn",
-    "tiktokUrl": "https://tiktok.com"
-  },
-  {
     "category": "dien-gia-dung",
     "categoryLabel": "Thiết bị điện",
     "name": "Quạt Kẹp Đa Năng Xoay 360 Độ Pin Trâu 5000mAh",
