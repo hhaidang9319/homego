@@ -2,6 +2,19 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
+    "name": "Nồi Chiên Không Dầu SUNHOUSE 6.5 Lít",
+    "category": "nha-bep",
+    "price": "890.990đ",
+    "oldPrice": "1.600.000đ",
+    "badge": "BÁN CHẠY",
+    "flashSale": "-48%",
+    "shopeeUrl": "https://vt.tiktok.com/ZS9yfe5GFJ8uu-fUzTT/",
+    "tiktokUrl": "https://s.shopee.vn/3qOG5lddx7",
+    "image": "images/1793285560799.jpg",
+    "categoryLabel": "Đồ dùng nhà bếp",
+    "imageAlt": "Nồi Chiên Không Dầu SUNHOUSE 6.5 Lít"
+  },
+  {
     "name": "Kệ Giày Dép Đa Năng",
     "category": "noi-that",
     "price": "84.999đ",
