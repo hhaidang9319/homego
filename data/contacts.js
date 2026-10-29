@@ -18,7 +18,7 @@ window.HOMEGO_CONTACTS = {
   // Biểu tượng mạng xã hội ở chân trang (đổi url "#" thành link thật).
   // Muốn thêm: copy 1 dòng, đổi icon (tên icon FontAwesome) và url.
   socials: [
-    { title: "Facebook", icon: "fa-brands fa-facebook-f", url: "facebook.com/homego.online" },
+    { title: "Facebook", icon: "fa-brands fa-facebook-f", url: "https://facebook.com/homego.online" },
     { title: "TikTok",   icon: "fa-brands fa-tiktok",     url: "#" },
     { title: "Shopee",   icon: "fa-solid fa-bag-shopping", url: "#" },
     { title: "Zalo",     icon: "fa-solid fa-z",           url: "#" }
