@@ -55,9 +55,9 @@
                 <nav class="hidden md:flex items-center space-x-5 lg:space-x-8 font-medium text-xs lg:text-sm whitespace-nowrap">
                     <a href="#home" class="text-[#0F5132] font-bold hover:text-[#FF8A2B] transition">Trang chủ</a>
                     <a href="#products" class="text-gray-700 hover:text-[#0F5132] transition">Sản phẩm</a>
-                    <a href="#categories" class="text-gray-700 hover:text-[#0F5132] transition">Nhà cửa & Đời sống</a>
+                    <a href="/nha-cua-doi-song/" class="text-gray-700 hover:text-[#0F5132] transition">Nhà cửa & Đời sống</a>
                     <a href="#flashsale" class="text-gray-700 hover:text-[#0F5132] transition">Deal & Ưu đãi</a>
-                    <a href="#reviews" class="text-gray-700 hover:text-[#0F5132] transition">Review & Mẹo hay</a>
+                    <a href="/review-meo-hay/" class="text-gray-700 hover:text-[#0F5132] transition">Review & Mẹo hay</a>
                 </nav>
 
                 <!-- SEARCH & ACTIONS -->
@@ -222,17 +222,6 @@
     </section>
 
     <!-- REVIEW & MẸO HAY -->
-    <section id="reviews" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-        <div class="mb-4 md:mb-6">
-            <h2 class="text-xl md:text-2xl font-extrabold font-heading text-[#0F5132]">Review & Mẹo Hay Gia Dụng</h2>
-            <p class="text-[11px] md:text-xs text-gray-500">Đánh giá thực tế, chi tiết từng sản phẩm giúp bạn mua sắm thông thái</p>
-        </div>
-
-        <div id="blogPosts">
-            <!-- Render từ blog.js -->
-        </div>
-    </section>
-
     <!-- FOOTER CHUẨN THƯƠNG HIỆU HOMEGO -->
     <footer class="bg-[#0F5132] text-white pt-10 md:pt-12 pb-8 mt-10 md:mt-12 border-t border-emerald-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -312,7 +301,7 @@
             <i class="fa-solid fa-bolt text-base text-[#FF8A2B]"></i>
             <span class="text-[10px] font-semibold mt-0.5">Deal Hot</span>
         </a>
-        <a href="#reviews" class="flex flex-col items-center text-gray-500 hover:text-[#0F5132]">
+        <a href="/review-meo-hay/" class="flex flex-col items-center text-gray-500 hover:text-[#0F5132]">
             <i class="fa-solid fa-book-open text-base"></i>
             <span class="text-[10px] font-semibold mt-0.5">Review</span>
         </a>
@@ -426,22 +415,6 @@
         </a>
     `);
 
-            // ---------- BLOG: danh sách thẻ, bấm vào mở trang bài viết ----------
-            const posts = window.HOMEGO_BLOG || [];
-            const bimg = u => !u ? '' : /^(https?:|data:|\/)/.test(u) ? u : u;
-            set('blogPosts', `
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">${posts.slice(0, 3).map(b => `
-                <a href="post.html?p=${encodeURIComponent(b.slug)}" class="bg-white rounded-2xl border border-[#E5E7EB] shadow-sm overflow-hidden hover:shadow-md transition flex flex-col">
-                    <img src="${esc(bimg(b.image))}" alt="${esc(b.title)}" class="w-full h-44 object-cover bg-gray-100">
-                    <div class="p-4 flex flex-col flex-1">
-                        <span class="text-[10px] font-bold text-[#0F5132] uppercase tracking-wider">${esc(b.tag || 'Đánh giá chi tiết')}</span>
-                        <h3 class="font-heading font-bold text-sm md:text-base text-[#222222] mt-1 mb-2 line-clamp-2">${esc(b.title)}</h3>
-                        <p class="text-xs text-gray-600 line-clamp-3 mb-3">${esc(b.intro)}</p>
-                        <span class="mt-auto text-xs font-bold text-[#FF8A2B]">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </a>`).join('')}</div>
-            ${posts.length > 3 ? '<div class="text-center mt-5"><a href="post.html" class="inline-block bg-[#0F5132] text-white px-6 py-2.5 rounded-xl font-heading font-bold text-xs">Xem tất cả bài viết</a></div>' : ''}
-            `);
         })();
     </script>
 
