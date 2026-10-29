@@ -54,18 +54,5 @@ window.HOMEGO_PRODUCTS = [
     "flashSale": "",
     "shopeeUrl": "https://s.shopee.vn/5LD2FbVfCh",
     "tiktokUrl": "https://vt.tiktok.com/ZS9ySugjHYHrf-SixnA/"
-  },
-  {
-    "category": "den-chieu-sang",
-    "categoryLabel": "Đèn chiếu sáng",
-    "name": "Đèn LED Thanh Dán Tủ Cảm Ứng Chuyển Động Pin Sạc",
-    "image": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=400",
-    "imageAlt": "Đèn LED",
-    "price": "135.000đ",
-    "oldPrice": "199.000đ",
-    "badge": "",
-    "flashSale": "",
-    "shopeeUrl": "https://shopee.vn",
-    "tiktokUrl": "https://tiktok.com"
   }
 ];
