@@ -2,6 +2,19 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
+    "name": "Đèn Bàn Làm Việc Bảo Vệ Mắt Luxia Max",
+    "category": "den-chieu-sang",
+    "price": "1.469.000đ",
+    "oldPrice": "",
+    "badge": "BÁN CHẠY",
+    "flashSale": "",
+    "shopeeUrl": "https://s.shopee.vn/7puOrZLhNY",
+    "tiktokUrl": "https://vt.tiktok.com/ZS9yfdX3kXmqh-CzAee/",
+    "image": "images/1793286053749.jpg",
+    "categoryLabel": "Đèn chiếu sáng",
+    "imageAlt": "Đèn Bàn Làm Việc Bảo Vệ Mắt Luxia Max"
+  },
+  {
     "name": "Ghế Gaming Xpanse X9",
     "category": "noi-that",
     "price": "1.560.000đ",
