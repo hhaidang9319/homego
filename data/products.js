@@ -2,6 +2,19 @@ var HOMEGO_NO_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 window.HOMEGO_PRODUCTS = [
   {
+    "name": "Cây Chà Sàn Nhà Tắm Đa Năng",
+    "category": "phong-tam",
+    "price": "109.000đ",
+    "oldPrice": "200.000đ",
+    "badge": "BÁN CHẠY",
+    "flashSale": "-46%",
+    "shopeeUrl": "https://s.shopee.vn/30p9mqpf49",
+    "tiktokUrl": "https://vt.tiktok.com/ZS9yPKHUBfEfk-J4Hw2/",
+    "image": "images/1793322864266.jpg",
+    "categoryLabel": "Phòng tắm",
+    "imageAlt": "Cây Chà Sàn Nhà Tắm Đa Năng"
+  },
+  {
     "name": "Đèn Bàn Làm Việc Bảo Vệ Mắt Luxia Max",
     "category": "den-chieu-sang",
     "price": "1.469.000đ",
